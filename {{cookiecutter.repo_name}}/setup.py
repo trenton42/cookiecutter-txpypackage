@@ -31,6 +31,7 @@ setup(
     package_dir={'{{ cookiecutter.repo_name }}': '{{ cookiecutter.repo_name }}'},
     include_package_data=True,
     install_requires=[
+        'twisted'
     ],
     license="BSD",
     zip_safe=False,
