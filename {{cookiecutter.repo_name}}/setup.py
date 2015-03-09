@@ -14,12 +14,13 @@ if sys.argv[-1] == 'publish':
     os.system('python setup.py sdist upload')
     sys.exit()
 
-readme = open('README.rst').read()
+readme = open('README.md').read()
 history = open('HISTORY.rst').read().replace('.. :changelog:', '')
+version = open('{{ cookiecutter.repo_name }}/VERSION').read()
 
 setup(
     name='{{ cookiecutter.repo_name }}',
-    version='{{ cookiecutter.version }}',
+    version=version,
     description='{{ cookiecutter.project_short_description }}',
     long_description=readme + '\n\n' + history,
     author='{{ cookiecutter.full_name }}',

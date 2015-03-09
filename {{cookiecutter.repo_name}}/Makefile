@@ -27,13 +27,13 @@ lint:
 	flake8 {{ cookiecutter.repo_name }} tests
 
 test:
-	python setup.py test
+	trial tests
 
 test-all:
 	tox
 
 coverage:
-	coverage run --source {{ cookiecutter.repo_name }} setup.py test
+	coverage run --source {{ cookiecutter.repo_name }} `which trial` tests
 	coverage report -m
 	coverage html
 	open htmlcov/index.html
